@@ -1,5 +1,20 @@
+@use './base' as *;
+
 @mixin bp-up($bp) {
-    @media screen and (min-width: $bp) {
+    @if map-has-key($breakpoints, $bp) {
+        @media screen and (min-width: map-get($breakpoints, $bp)) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Invalid breakpoint value";
+    }
+}
+
+@mixin on-event {
+    &:hover,
+    &:focus,
+    &:active {
         @content;
     }
 }

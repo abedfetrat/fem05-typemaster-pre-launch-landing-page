@@ -1,5 +1,99 @@
-@use './base';
-@use './mixins' as *;
-@use './utillities' as *;
-@use './typography' as *;
-@use './colors' as *;
+@use "./base";
+@use "./mixins" as *;
+@use "./utillities" as *;
+@use "./grid";
+@use "./typography" as *;
+@use "./colors";
+@use "./buttons";
+
+.main-header {
+  padding-block: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro {
+  padding-top: 2.5rem;
+  align-items: center;
+  row-gap: 64px;
+  overflow-x: hidden;
+
+  &__heading {
+    word-wrap: break-word;
+  }
+
+  &__paragraph {
+    max-width: 45ch;
+  }
+
+  &__pre-order {
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+    row-gap: 0.5rem;
+    p {
+      font-weight: $fw-bold;
+      text-transform: uppercase;
+    }
+  }
+
+  &__main-content {
+    grid-column: 2 / 6;
+  }
+
+  &__image-wrapper {
+    grid-column: 2 / -1;
+    justify-content: flex-end;
+  }
+
+  &__image {
+    width: 372px;
+    height: 331px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-image: url(../../assets/mobile/image-keyboard.jpg);
+    background-size: cover;
+  }
+
+  @include bp-up("medium") {
+    &__main-content {
+      grid-column: 2 / 8;
+    }
+    &__image-wrapper {
+      grid-column: 9 / -1;
+    }
+    &__image {
+      width: 478px;
+      height: 425px;
+    }
+  }
+
+  @include bp-up("large") {
+    &__main-content {
+      grid-column: 2 / 8;
+    }
+    &__image-wrapper {
+      grid-column: 8 / 14;
+    }
+    &__image {
+      width: 540px;
+      height: 480px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
+}
+
+/* &__image {
+    width: calc(100% + 24px);
+    height: auto;
+    margin-top: 64px;
+    margin-right: -24px;
+    float: right;
+    aspect-ratio: 372/331;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-image: url(../../assets/mobile/image-keyboard.jpg);
+    background-size: cover;
+  } */
