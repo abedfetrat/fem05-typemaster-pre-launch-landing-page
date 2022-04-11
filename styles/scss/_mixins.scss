@@ -1,20 +1,20 @@
-@use './base' as *;
+@use "sass:map";
+@use './variables' as *;
 
 @mixin bp-up($bp) {
-    @if map-has-key($breakpoints, $bp) {
-        @media screen and (min-width: map-get($breakpoints, $bp)) {
-            @content;
-        }
+  @if map.has-key($breakpoints, $bp) {
+    @media screen and (min-width: map.get($breakpoints, $bp)) {
+      @content;
     }
-    @else {
-        @warn "Invalid breakpoint value";
-    }
+  } @else {
+    @warn "Invalid breakpoint value";
+  }
 }
 
 @mixin on-event {
-    &:hover,
-    &:focus,
-    &:active {
-        @content;
-    }
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
 }

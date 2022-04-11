@@ -1,0 +1,30 @@
+/* Breakpoints */
+$breakpoints: (
+  "tiny": 375px,
+  "small": 480px,
+  "medium": 768px,
+  "large": 1110px,
+);
+
+/* Font Families */
+$ff-primary: "Barlow", sans-serif;
+
+/* Font sizes */
+$fs-900: 3.5rem;
+$fs-800: 3rem;
+$fs-700: 2rem;
+$fs-600: 1.5rem;
+$fs-400: 1rem;
+
+/* Font Weights */
+$fw-black: 900;
+$fw-bold: 700;
+$fw-medium: 500;
+
+/* Colors */
+$clr-primary: hsl(22, 89%, 52%);
+$clr-primary-light: hsl(22, 100%, 69%);
+$clr-secondary: hsl(220, 50%, 17%);
+$clr-secondary-light: hsl(221, 23%, 58%);
+$clr-light-gray: hsl(198, 28%, 93%);
+$clr-white: hsl(0, 0%, 100%);
