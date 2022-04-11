@@ -83,12 +83,20 @@ $common-border-radius: 20px;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding-block: 24px;
+  padding-top: 24px;
+
+  @include bp-up("medium") {
+    padding-top: 40px;
+  }
+
+  @include bp-up("large") {
+    padding-top: 55px;
+  }
 }
 
 .intro {
   grid-template-rows: min-content 331px;
-  padding-top: 40px;
+  padding-top: 64px;
   align-items: center;
   row-gap: 64px;
 
@@ -96,15 +104,25 @@ $common-border-radius: 20px;
     grid-template-rows: minmax(425px, min-content);
   }
 
+  @include bp-up("large") {
+    padding-top: 83px;
+  }
+
   &__heading {
     font-size: $fs-800;
     font-weight: $fw-black;
     line-height: 1;
     text-transform: uppercase;
+    @include bp-up("large") {
+      font-size: $fs-900;
+    }
   }
 
   &__paragraph {
     max-width: 45ch;
+    @include bp-up("large") {
+      font-size: $fs-500;
+    }
   }
 
   &__pre-order {
@@ -287,6 +305,14 @@ $common-border-radius: 20px;
   padding-top: 111px;
   row-gap: 64px;
 
+  @include bp-up("medium") {
+    padding-top: 142px;
+  }
+
+  @include bp-up("large") {
+    padding-top: 168px;
+  }
+
   .feature {
     text-align: center;
 
@@ -341,4 +367,14 @@ $common-border-radius: 20px;
   padding-top: 96px;
   padding-bottom: 50px;
   text-align: center;
+
+  @include bp-up("medium") {
+    padding-top: 142px;
+    padding-bottom: 43px;
+  }
+
+  @include bp-up("large") {
+    padding-top: 128px;
+    padding-bottom: 39px;
+  }
 }
